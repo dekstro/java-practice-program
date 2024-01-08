@@ -3,11 +3,14 @@ import java.util.*;
 public class s2 {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        int n;
-        System.out.print("Enter a number: ");
-        n=sc.nextInt();
-        for(int i=1;i<=n;i++){
-            System.out.println("Hello World");
+        int x=4,y=0;
+        while (x>=0) {
+            x--;
+            y++;
+            if(x==y)
+                continue;
+            else
+                System.out.println(x+" "+y);
         }
         sc.close();
     }
