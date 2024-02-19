@@ -16,7 +16,6 @@ public class s {
     }
     public static void main(String[] args) {
         String s="1234";
-        int n=s.length();
         int k=2;
         str=new ArrayList<>();
         print(0,k,s,"");
