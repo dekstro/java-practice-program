@@ -1,4 +1,4 @@
-# 💫 About Me:
+# 💫 Coding journey
 This repo contains Java + DSA problems
 
 
