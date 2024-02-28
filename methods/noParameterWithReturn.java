@@ -1,5 +1,5 @@
 package methods;
-class Calculator{
+class Calc{
     int a, b, res;
     public int add(){
         a=10;
@@ -10,7 +10,7 @@ class Calculator{
 }
 public class noParameterWithReturn {
   public static void main(String[] args) {
-    Calculator c=new Calculator();
+    Calc c=new Calc();
     int sum=c.add();
     System.out.println(sum);
   }  
