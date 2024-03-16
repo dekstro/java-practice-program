@@ -63,6 +63,27 @@ class SLL{
         return x.value;
     }
 
+    //delete element
+    public void delete(int idx){
+        if(head==null) System.out.println("List is Empty");
+        if(idx>=size || idx<0){
+            System.out.println("Invalid index");
+            return;
+        }
+        if(idx==0){
+            head=head.next;
+            size--;
+            return;
+        }
+        Node x=head;
+        for(int i=0;i<idx-1;i++){
+            x=x.next;
+        }
+        if(x.next==tail) tail=x;
+        x.next=x.next.next;
+        size--;
+    }
+
     //display method
     public void print(){
         Node temp=head;
@@ -87,9 +108,13 @@ public class implementationofLL {
         list.addAtHead(100);
         list.addAtHead(200);
         list.print();
+        System.out.println("Size: "+list.size);
         list.insert(5, 99);
         list.print();
         System.out.println("Size: "+list.size);
         System.out.println(list.get(3));
+        list.delete(7);
+        list.print();
+        System.out.println("Size: "+list.size);
     }
 }
