@@ -3,6 +3,7 @@ class SLL{
     private Node head;
     private Node tail;
     int size;
+    //insert at the end
     public void addAtEnd(int value){
         Node temp=new Node(value);
         if(head==null) head=tail=temp;
@@ -13,6 +14,7 @@ class SLL{
         size++;
     }
 
+    //insert at the head
     public void addAtHead(int value){
         Node temp=new Node(value);
         if(head==null) head=tail=temp;
@@ -23,6 +25,45 @@ class SLL{
         size++;
     }
 
+    //insert at anywhere
+    public void insert(int idx, int value){
+        if (idx==0){
+            addAtHead(value);
+            return;
+        }
+        if (idx==size) {
+            addAtEnd(value);
+            return;
+        }
+        if (idx>size || idx<0) {
+            System.out.println("Invalid Index input");
+            return;
+        }
+        Node temp=new Node(value);
+        Node x=head;
+        for(int i=0;i<idx-1;i++){
+            x=x.next;
+        }
+        temp.next=x.next;
+        x.next=temp;
+        size++;
+    }
+    
+    //get element in particular index
+    public int get(int idx){
+        if (idx==size-1) return tail.value;
+        if (idx>=size || idx<0) {
+            System.out.println("Invalid Index input");
+            return 0;
+        }
+        Node x=head;
+        for(int i=0;i<idx;i++){
+            x=x.next;
+        }
+        return x.value;
+    }
+
+    //display method
     public void print(){
         Node temp=head;
         while (temp!=null) {
@@ -46,6 +87,9 @@ public class implementationofLL {
         list.addAtHead(100);
         list.addAtHead(200);
         list.print();
+        list.insert(5, 99);
+        list.print();
         System.out.println("Size: "+list.size);
+        System.out.println(list.get(3));
     }
 }
