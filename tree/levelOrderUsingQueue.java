@@ -14,6 +14,8 @@ class Pair{
 public class levelOrderUsingQueue {
     public static void levelOrder(TreeNode root){
         Queue<Pair> q=new LinkedList<>();
+        if(root!=null) q.add(new Pair(root, 0));
+        
     } 
     public static void main(String[] args) {
         
